@@ -44,4 +44,25 @@ void conditionalAssignmentPrecedence() {
 
     // Assignment (=) has lower precedence than arithmetic (+)
     result = a > b ? a : b = b + 1;  // result = (a > b) ? a : (b = b + 1) => 10
-    printf("result
+    printf("result = %d, b = %d\n", result, b);  // b is incremented to 6
+
+    // Use parentheses to change the precedence
+    result = (a > b) ? a : (b = b + 1);  // result = (a > b) ? a : (b = b + 1) => 10
+    printf("result = %d, b = %d\n", result, b);
+}
+
+int main() {
+    printf("Arithmetic Operations:\n");
+    arithmeticPrecedence();
+
+    printf("\nLogical Operations:\n");
+    logicalPrecedence();
+
+    printf("\nBitwise Operations:\n");
+    bitwisePrecedence();
+
+    printf("\nConditional and Assignment Operations:\n");
+    conditionalAssignmentPrecedence();
+
+    return 0;
+}
